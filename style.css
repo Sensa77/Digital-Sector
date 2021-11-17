@@ -81,16 +81,22 @@ a {
   padding-bottom: 40px;
 }
 
-.options__container {
+.name {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 9px;
+}
+
+.name__wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.options__back {
+.back {
   display: none;
 }
 
-.options__title {
+.name__title {
   font-weight: bold;
   font-family: "Inter";
   font-size: 20px;
@@ -99,14 +105,14 @@ a {
   margin-bottom: 2px;
 }
 
-.options__arrow {
+.name__arrow {
   padding-right: 9.5px;
   width: 17px;
   height: 11px;
   cursor: pointer;
 }
 
-.options__price {
+.name__price {
   display: block;
   font-family: "Futura PT";
   font-weight: normal;
@@ -116,14 +122,14 @@ a {
   margin-bottom: 9px;
 }
 
-.options__wrapper {
+.size-chart {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 29px;
 }
 
-.options__dimensions {
+.size-chart__dimensions {
   display: flex;
   list-style: none;
   padding: 0;
@@ -132,7 +138,7 @@ a {
   margin: 0;
 }
 
-.options__size {
+.size-chart__size {
   font-family: "Futura PT";
   background-color: #eee;
   border-radius: 50%;
@@ -144,14 +150,14 @@ a {
   cursor: pointer;
 }
 
-.options__size--not-available {
+.size-chart__size--not-available {
   background-color: #fff;
   border: 1px solid #e5e5e5;
   position: relative;
   z-index: 1;
 }
 
-.options__size--not-available::before {
+.size-chart__size--not-available::before {
   content: "";
   display: block;
   width: 29px;
@@ -164,14 +170,18 @@ a {
   z-index: -1;
 }
 
-.options__prompt {
+.size-chart__prompt {
   font-family: "Futura PT";
   font-size: 16px;
   line-height: 21px;
   cursor: pointer;
 }
 
-.options__list {
+.buttons {
+  margin-bottom: 32px;
+}
+
+.buttons__list {
   width: 280px;
   height: 40px;
   background-color: #eee;
@@ -198,7 +208,7 @@ select {
   padding-right: 16px;
 }
 
-.options__button {
+.buttons__basket {
   font-family: "Futura PT";
   font-size: 15px;
   line-height: 19px;
@@ -214,7 +224,7 @@ select {
   border: none;
 }
 
-.options__button::after {
+.buttons__basket::after {
   content: "";
   display: block;
   background-image: url(./img/heart.svg);
@@ -315,13 +325,19 @@ select {
 
 @media (min-width: 768px) {
   .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 40px;
     width: 768px;
     padding-top: 36px;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 57px;
   }
-  .options__back {
+
+  .back {
+    grid-column: 1/2;
+    grid-row: 1/2;
     display: flex;
     width: 135px;
     justify-content: space-between;
@@ -334,62 +350,65 @@ select {
     width: 100%;
   }
 
-  .options__home {
+  .back__home {
     width: 14px;
     height: 14px;
+    cursor: pointer;
   }
 
-  .options__arrow-right {
+  .back__arrow-right {
     opacity: 30%;
+    cursor: pointer;
   }
 
-  .options__chapter {
+  .back__chapter {
     opacity: 30%;
     text-transform: uppercase;
     font-family: "Futura PT";
     font-weight: 500;
     font-size: 16px;
     line-height: 21px;
+    cursor: pointer;
   }
 
-  .options__wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 334px;
-  }
-
-  .options__container {
+  .name {
+    grid-column: 2/3;
+    grid-row: 1/2;
     width: 333px;
+    margin-bottom: 22px;
   }
 
-  .options__title {
+  .name__title {
     font-size: 25px;
     line-height: 30px;
   }
 
-  .options__price {
+  .name__price {
     font-size: 18px;
     line-height: 23px;
-    margin-bottom: 22px;
+    margin-bottom: 0;
   }
 
-  .options__list {
-    order: 1;
+  .buttons {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-bottom: 35px;
+  }
+
+  .buttons__list {
     width: 334px;
     height: 50px;
     margin-bottom: 6px;
   }
 
-  .options__button {
-    order: 2;
+  .buttons__basket {
     width: 334px;
     height: 50px;
-    margin-bottom: 35px;
   }
 
-  .options__wrapper {
-    order: 3;
+  .size-chart {
+    grid-column: 2/3;
+    grid-row: 3/4;
     width: 334px;
     padding-right: 1px;
   }
@@ -398,18 +417,18 @@ select {
     margin-bottom: 0;
   }
 
-  .options__button::after {
+  .buttons__basket::after {
     width: 18px;
     height: 17px;
     background-repeat: no-repeat;
     top: 17px;
   }
 
-  .options__dimensions {
+  .size-chart__dimensions {
     width: 135px;
   }
 
-  .options__size {
+  .size-chart__size {
     width: 41px;
     height: 41px;
     font-size: 14px;
@@ -417,25 +436,25 @@ select {
     padding-top: 11px;
   }
 
-  .options__size::before {
+  .size-chart__size::before {
     width: 39px;
     height: 1px;
     top: 18px;
   }
 
-  .options__prompt {
+  .size-chart__prompt {
     width: 175px;
   }
 
   .slider {
-    order: 3;
+    grid-column: 1/2;
+    grid-row: 2/6;
   }
 
   .slider__photo {
-    position: absolute;
-    top: 112px;
     width: 314px;
     height: 449px;
+    margin-bottom: 15px;
   }
 
   .slider__photo::before {
@@ -452,12 +471,13 @@ select {
   }
 
   .slider__list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
     width: 314px;
-    margin-left: 50%;
     list-style: none;
     padding-left: 0;
+    margin: 0;
   }
 
   .slider__item {
@@ -467,19 +487,29 @@ select {
   }
 
   .description {
-    display: flex;
-    flex-direction: column;
-    margin-left: 50%;
-    width: 334px;
-    padding-left: 12px;
-    order: 2;
+    grid-column: 2/3;
+    grid-row: 4/5;
+    margin-bottom: 0;
   }
 
   .description__text {
     margin-top: 0;
   }
 
+  .description__text:last-child {
+    margin-bottom: 0;
+  }
+
   .slider__switches {
     display: none;
+  }
+
+  .badges {
+    grid-column: 2/3;
+    grid-row: 5/6;
+  }
+
+  .badges__list {
+    margin: 0;
   }
 }
