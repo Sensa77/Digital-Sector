@@ -89,11 +89,14 @@
         <span class="size-chart__prompt">Как выбрать размер?</span>
       </div>
       <div class="buttons">
-        <select class="buttons__list">
-          <option class="buttons__item">Размер: S</option>
-          <option class="buttons__item">Размер: M</option>
-          <option class="buttons__item">Размер: L</option>
-        </select>
+        <div class="buttons__list">
+          Размер: S
+          <ul class="buttons__list-container">
+            <li class="buttons__item" data-size="S">Размер: S</li>
+            <li class="buttons__item" data-size="M">Размер: M</li>
+            <li class="buttons__item" data-size="M">Размер: L</li>
+          </ul>
+        </div>
         <button class="buttons__basket">В корзину</button>
         <div class="buttons__like">
           <svg
@@ -193,5 +196,6 @@
         </ul>
       </section>
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>

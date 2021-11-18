@@ -189,28 +189,71 @@ a {
   text-transform: uppercase;
   font-family: "Futura PT";
   font-weight: normal;
-  padding-left: 15px;
   margin-bottom: 6px;
   cursor: pointer;
   position: relative;
   font-size: 16px;
   line-height: 21px;
+  padding-left: 15px;
+  margin-top: 0;
+  text-align: start;
+  padding-top: 10px;
 }
 
-select {
-  appearance: none;
-  width: 6px;
-  height: 11px;
+.buttons__list::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 13px;
+  height: 7px;
   background-image: url(./img/black-arrow.svg);
   background-repeat: no-repeat;
-  background-position-x: 94%;
-  background-position-y: 50%;
-  padding-right: 16px;
+  top: 15px;
+  right: 15px;
+}
+
+.buttons__list-container {
+  display: none;
+  position: absolute;
+  padding-left: 0;
+  z-index: 1;
+  top: 24px;
+  left: 0;
 }
 
 .buttons__item {
+  display: block;
+  width: 280px;
+  height: 40px;
   background-color: #fff;
   border: 1px solid #000;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.buttons__item:not(:first-child) {
+  border-top: none;
+}
+
+.buttons__item:first-child::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 13px;
+  height: 7px;
+  background-image: url(./img/black-arrow.svg);
+  transform: rotate(180deg);
+  background-repeat: no-repeat;
+  right: 17px;
+  top: 15px;
 }
 
 .buttons__basket {
@@ -405,6 +448,11 @@ select {
     width: 334px;
     height: 50px;
     margin-bottom: 6px;
+    padding-top: 15px;
+  }
+
+  .buttons__list::after {
+    top: 23px;
   }
 
   .buttons__basket {
@@ -417,10 +465,6 @@ select {
     grid-row: 3/4;
     width: 334px;
     padding-right: 1px;
-  }
-
-  .options {
-    margin-bottom: 0;
   }
 
   .buttons__basket::after {
