@@ -208,6 +208,11 @@ select {
   padding-right: 16px;
 }
 
+.buttons__item {
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
 .buttons__basket {
   font-family: "Futura PT";
   font-size: 15px;
@@ -235,8 +240,8 @@ select {
   top: 13px;
 }
 
-.options {
-  margin-bottom: 32px;
+.buttons__like {
+  display: none;
 }
 
 .slider__photo {
@@ -327,6 +332,7 @@ select {
   .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 89px 141px 76px 261px 167px;
     grid-column-gap: 40px;
     width: 768px;
     padding-top: 36px;
@@ -513,3 +519,100 @@ select {
     margin: 0;
   }
 }
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    grid-template-columns: (3, 1fr);
+    grid-column-gap: 67px;
+    padding-top: 0;
+    grid-template-rows: 100px 89px 83px 85px 400px;
+  }
+
+  .back {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding-left: 53px;
+    width: 188px;
+  }
+
+  .name {
+    grid-column: 4/5;
+    grid-row: 2/3;
+    width: 100%;
+  }
+
+  .badges {
+    grid-column: 1/2;
+    grid-row: 3/6;
+  }
+
+  .badges__list {
+    flex-direction: column;
+  }
+
+  .badges__picture {
+    width: 110px;
+    height: 110px;
+  }
+
+  .slider {
+    grid-column: 2/3;
+    grid-row: 1/6;
+  }
+
+  .slider__photo {
+    width: 396px;
+    height: 566px;
+  }
+
+  .slider__picture {
+    width: 268px;
+    height: 469px;
+  }
+
+  .slider__list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .buttons {
+    grid-column: 4/5;
+    grid-row: 3/4;
+    display: flex;
+  }
+
+  .buttons__list {
+    width: 233px;
+  }
+
+  .buttons__basket {
+    width: 219px;
+  }
+
+  .buttons__basket::after {
+    display: none;
+  }
+
+  .buttons__like {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #eeeeee;
+    border-radius: 50%;
+    padding-top: 15px;
+    cursor: pointer;
+    margin-left: 25px;
+  }
+
+  .size-chart {
+    grid-column: 4/5;
+    grid-row: 4/5;
+    width: 435px;
+  }
+
+  .description {
+    grid-column: 4/5;
+    grid-row: 5/6;
+    width: 453px;
+  }
+} ;
