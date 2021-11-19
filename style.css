@@ -147,7 +147,6 @@ a {
   padding-top: 8px;
   font-size: 12px;
   line-height: 15px;
-  cursor: pointer;
 }
 
 .size-chart__size--not-available {
@@ -208,7 +207,7 @@ a {
   height: 7px;
   background-image: url(./img/black-arrow.svg);
   background-repeat: no-repeat;
-  top: 15px;
+  top: 17px;
   right: 15px;
 }
 
@@ -217,7 +216,7 @@ a {
   position: absolute;
   padding-left: 0;
   z-index: 1;
-  top: 24px;
+  top: -16px;
   left: 0;
 }
 
@@ -231,7 +230,7 @@ a {
   padding-top: 10px;
 }
 
-.show {
+.buttons__list-container--show {
   display: block;
 }
 
@@ -288,6 +287,7 @@ a {
 }
 
 .slider__photo {
+  display: flex;
   width: 280px;
   height: 400px;
   background-color: #f2f2f2;
@@ -455,6 +455,20 @@ a {
     top: 23px;
   }
 
+  .buttons__list-container {
+    top: -15px;
+  }
+
+  .buttons__item {
+    width: 334px;
+    height: 50px;
+    padding-top: 15px;
+  }
+
+  .buttons__item:first-child::after {
+    top: 20px;
+  }
+
   .buttons__basket {
     width: 334px;
     height: 50px;
@@ -534,6 +548,9 @@ a {
     width: 67px;
     height: 67px;
     background-color: #f2f2f2;
+  }
+  .slider__item--active {
+    border: 2px solid #000;
   }
 
   .description {
@@ -626,6 +643,14 @@ a {
   }
 
   .buttons__list {
+    width: 233px;
+  }
+
+  .buttons__list::after {
+    top: 21px;
+  }
+
+  .buttons__item {
     width: 233px;
   }
 

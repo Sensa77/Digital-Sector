@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./style.css" rel="stylesheet" />
     <link href="./normalize.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://kenwheeler.github.io/slick/slick/slick-theme.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <title>Digital Sector</title>
   </head>
   <body>
@@ -90,11 +101,11 @@
       </div>
       <div class="buttons">
         <div class="buttons__list">
-          Размер: S
+          <span class="buttons__title">Размер: S</span>
           <ul class="buttons__list-container">
             <li class="buttons__item" data-size="S">Размер: S</li>
             <li class="buttons__item" data-size="M">Размер: M</li>
-            <li class="buttons__item" data-size="M">Размер: L</li>
+            <li class="buttons__item" data-size="L">Размер: L</li>
           </ul>
         </div>
         <button class="buttons__basket">В корзину</button>
@@ -116,53 +127,57 @@
       <section class="slider">
         <div class="slider__photo">
           <img class="slider__picture" src="./img/jeans.png" />
+          <img class="slider__picture" src="./img/jeans.png" />
+          <img class="slider__picture" src="./img/jeans.png" />
+          <img class="slider__picture" src="./img/jeans.png" />
+          <img class="slider__picture" src="./img/jeans.png" />
+          <img class="slider__picture" src="./img/jeans.png" />
         </div>
         <ul class="slider__switches">
-          <li class="slider__switch slider__switch--active"></li>
-          <li class="slider__switch"></li>
-          <li class="slider__switch"></li>
-          <li class="slider__switch"></li>
-          <li class="slider__switch"></li>
-          <li class="slider__switch"></li>
-          <li class="slider__switch"></li>
+          <li class="slider__switch" data-id="0"></li>
+          <li class="slider__switch" data-id="1"></li>
+          <li class="slider__switch" data-id="2"></li>
+          <li class="slider__switch" data-id="3"></li>
+          <li class="slider__switch" data-id="4"></li>
+          <li class="slider__switch" data-id="5"></li>
         </ul>
         <ul class="slider__list">
-          <li class="slider__item">
+          <li class="slider__item slider__item--active" data-id="0">
             <img
               src="./img/Screenshot 2021-10-05 at 13.10 2.png"
               width="38px"
               height="67px"
             />
           </li>
-          <li class="slider__item">
+          <li class="slider__item" data-id="1">
             <img
               src="./img/Screenshot 2021-10-05 at 13.10 2.png"
               width="38px"
               height="67px"
             />
           </li>
-          <li class="slider__item">
+          <li class="slider__item" data-id="2">
             <img
               src="./img/Screenshot 2021-10-05 at 13.10 2.png"
               width="38px"
               height="67px"
             />
           </li>
-          <li class="slider__item">
+          <li class="slider__item" data-id="3">
             <img
               src="./img/Screenshot 2021-10-05 at 13.10 2.png"
               width="38px"
               height="67px"
             />
           </li>
-          <li class="slider__item">
+          <li class="slider__item" data-id="4">
             <img
               src="./img/Screenshot 2021-10-05 at 13.10 2.png"
               width="38px"
               height="67px"
             />
           </li>
-          <li class="slider__item">
+          <li class="slider__item" data-id="5">
             <img
               src="./img/Screenshot 2021-10-05 at 13.10 2.png"
               width="38px"
