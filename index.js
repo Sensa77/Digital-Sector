@@ -21,9 +21,9 @@ list.addEventListener("click", (event) => {
 sliderList.addEventListener(
   "mouseover",
   (event) => {
-    const target = event.target;
-    console.log(target);
-    if (target.tagName === "LI") {
+    const target =
+      event.target.tagName === "LI" ? event.target : event.target.closest("LI");
+    if (target) {
       mini.forEach((elem) => {
         elem.classList.remove("slider__item--active");
       });
@@ -35,19 +35,37 @@ sliderList.addEventListener(
   { capture: true }
 );
 
+$(".slider__photo").on(
+  "swipe",
+  function (event, slick, currentSlide, nextSlide) {
+    mini.forEach((elem) => {
+      elem.classList.remove("slider__item--active");
+    });
+    mini[slick.currentSlide].classList.add("slider__item--active");
+  }
+);
+
 sliderSwitches.addEventListener("click", (event) => {
   const target = event.target;
-  dots.forEach((elem) => {
-    elem.classList.remove("slider__switch--active");
-  });
   if (target.tagName === "LI") {
+    dots.forEach((elem) => {
+      elem.classList.remove("slider__switch--active");
+    });
     target.classList.add("slider__switch--active");
-  }
-  const idx = target.dataset.id;
-  if (target.tagName === "LI") {
+    const idx = target.dataset.id;
     $(".slider__photo").slick("slickGoTo", idx);
   }
 });
+
+$(".slider__photo").on(
+  "afterChange",
+  function (event, slick, currentSlide, nextSlide) {
+    dots.forEach((elem) => {
+      elem.classList.remove("slider__switch--active");
+    });
+    dots[currentSlide].classList.add("slider__switch--active");
+  }
+);
 
 $(document).ready(function () {
   $(".slider__photo").slick({

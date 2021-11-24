@@ -1,40 +1,4 @@
-@font-face {
-  font-family: "Futura PT";
-  src: url("./fonts/FuturaPT-Light.ttf") format("ttf");
-  font-weight: lighter;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Futura PT";
-  src: url("./fonts/FuturaPT-Medium.ttf") format("ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Futura PT";
-  src: url("./fonts/FuturaPT-Bold.ttf") format("ttf");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("./fonts/Inter-Regular.ttf") format("ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("./fonts/Inter-Bold.ttf") format("ttf");
-  font-weight: bold;
-  font-style: normal;
-}
-
 body {
-  font-family: "Futura PT", "Inter", sans-serif;
   padding: 0;
   font-size: 18px;
   line-height: 23px;
@@ -98,7 +62,6 @@ a {
 
 .name__title {
   font-weight: bold;
-  font-family: "Inter";
   font-size: 20px;
   line-height: 24px;
   margin: 0;
@@ -114,7 +77,6 @@ a {
 
 .name__price {
   display: block;
-  font-family: "Futura PT";
   font-weight: normal;
   font-size: 16px;
   line-height: 21px;
@@ -139,7 +101,6 @@ a {
 }
 
 .size-chart__size {
-  font-family: "Futura PT";
   background-color: #eee;
   border-radius: 50%;
   width: 30px;
@@ -170,7 +131,6 @@ a {
 }
 
 .size-chart__prompt {
-  font-family: "Futura PT";
   font-size: 16px;
   line-height: 21px;
   cursor: pointer;
@@ -186,7 +146,6 @@ a {
   background-color: #eee;
   border: none;
   text-transform: uppercase;
-  font-family: "Futura PT";
   font-weight: normal;
   margin-bottom: 6px;
   cursor: pointer;
@@ -256,7 +215,6 @@ a {
 }
 
 .buttons__basket {
-  font-family: "Futura PT";
   font-size: 15px;
   line-height: 19px;
   text-transform: uppercase;
@@ -358,7 +316,6 @@ a {
 }
 
 .description__text {
-  font-family: "Futura PT";
   font-size: 18px;
   line-height: 23px;
   text-align: start;
@@ -413,7 +370,6 @@ a {
   .back__chapter {
     opacity: 30%;
     text-transform: uppercase;
-    font-family: "Futura PT";
     font-weight: 500;
     font-size: 16px;
     line-height: 21px;
@@ -609,7 +565,13 @@ a {
   }
 
   .badges__list {
-    flex-direction: column;
+    display: block;
+  }
+
+  .badges__item {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
   }
 
   .badges__picture {
